@@ -5,8 +5,8 @@
 extern crate wasm_bindgen_test;
 use wasm_bindgen_test::*;
 
-extern crate hello;
-use hello::Accumulator;
+extern crate zdai;
+use zdai::Accumulator;
 
 wasm_bindgen_test_configure!(run_in_browser);
 
