@@ -13,6 +13,11 @@ default = ["console_error_panic_hook"]
 cfg-if = "0.1.2"
 wasm-bindgen = "0.2"
 
+rand = "0.4"
+ff = { git = 'https://github.com/matterinc/ff', features = ["derive"] }
+pairing = { git = 'https://github.com/matterinc/pairing' }
+bellman = { git = 'https://github.com/poma/bellman' }
+
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
