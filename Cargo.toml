@@ -11,18 +11,22 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 cfg-if = "0.1.2"
-wasm-bindgen = "0.2"
-
 rand = "0.4"
-ff = { git = 'https://github.com/matterinc/ff', features = ["derive"] }
-pairing = { git = 'https://github.com/matterinc/pairing' }
-bellman = { git = 'https://github.com/poma/bellman' }
+
+web-sys = {version = "0.3.17", features = ["console"]}
+wasm-bindgen = "^0.2.40"
+
+# bellman = { git = 'https://github.com/matterinc/bellman', tag = "0.2.0", default-features = false, features = ["wasm"] }
+# sapling-crypto = { git = 'https://github.com/matterinc/sapling-crypto' }
+
+bellman = { path = '../bellman', default-features = false, features = ["wasm"] }
+sapling-crypto = { path = '../sapling-crypto' }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
 # code size when deploying.
-console_error_panic_hook = { version = "0.1.1", optional = true }
+console_error_panic_hook = { version = "0.1.6", optional = true }
 
 # `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
 # compared to the default allocator's ~10K. It is slower than the default
